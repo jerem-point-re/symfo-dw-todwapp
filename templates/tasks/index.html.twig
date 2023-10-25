@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tasks index{% endblock %}
+
+{% block body %}
+
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.name }}</td>
+                <td>{{ task.description }}</td>
+                <td>
+                    <a href="{{ path('app_listing_show', {'id': task.id}) }}">show</a>
+                    <a href="{{ path('app_listing_show', {'id': task.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
