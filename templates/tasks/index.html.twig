@@ -9,8 +9,8 @@
                 <td>{{ task.name }}</td>
                 <td>{{ task.description }}</td>
                 <td>
-                    <a href="{{ path('app_listing_show', {'id': task.id}) }}">show</a>
-                    <a href="{{ path('app_listing_show', {'id': task.id}) }}">edit</a>
+                    <a href="{{ path('app_lists_show', {'id': task.id}) }}">show</a>
+                    <a href="{{ path('app_lists_show', {'id': task.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

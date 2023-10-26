@@ -51,7 +51,7 @@ class TasksController extends AbstractController
     #[Route('/{id}', name: 'app_tasks_show', methods: ['GET'])]
     public function show(Tasks $task): Response
     {
-        return $this->render('listing/show.html.twig', [
+        return $this->render('lists/show.html.twig', [
             'task' => $task,
         ]);
     }
@@ -65,7 +65,7 @@ class TasksController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_listing_show', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_lists_show', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('tasks/edit.html.twig', [

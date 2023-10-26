@@ -19,7 +19,7 @@ class Tasks
 
     #[ORM\ManyToOne(inversedBy: 'tasks')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Lists $listing = null;
+    private ?Lists $lists = null;
 
     public function getId(): ?int
     {
@@ -45,12 +45,12 @@ class Tasks
 
     public function getLists(): ?Lists
     {
-        return $this->listing;
+        return $this->lists;
     }
 
-    public function setLists(?Lists $listing): static
+    public function setLists(?Lists $lists): static
     {
-        $this->listing = $listing;
+        $this->lists = $lists;
 
         return $this;
     }

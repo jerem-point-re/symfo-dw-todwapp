@@ -123,22 +123,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->lists;
     }
 
-    public function addLists(Lists $listing): static
+    public function addLists(Lists $lists): static
     {
-        if (!$this->lists->contains($listing)) {
-            $this->lists->add($listing);
-            $listing->setUser($this);
+        if (!$this->lists->contains($lists)) {
+            $this->lists->add($lists);
+            $lists->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeLists(Lists $listing): static
+    public function removeLists(Lists $lists): static
     {
-        if ($this->lists->removeElement($listing)) {
+        if ($this->lists->removeElement($lists)) {
             // set the owning side to null (unless already changed)
-            if ($listing->getUser() === $this) {
-                $listing->setUser(null);
+            if ($lists->getUser() === $this) {
+                $lists->setUser(null);
             }
         }
 

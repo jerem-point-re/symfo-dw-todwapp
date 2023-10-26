@@ -1,35 +1,34 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Lists index{% endblock %}
+{% block title %}
+Lists index
+{% endblock %}
 
 {% block body %}
-    <h1>Lists index</h1>
+<h1>Lists index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for list in lists %}
-            <tr>
-                <td>{{ list.id }}</td>
-                <td>{{ list.name }}</td>
-                <td>
-                    <a href="{{ path('app_lists_show', {'id': list.id}) }}">show</a>
-                    <a href="{{ path('app_lists_edit', {'id': list.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+<div class="card-lists mb-3 df">
 
-    <a href="{{ path('app_lists_new') }}">Create new</a>
+    {% for list in lists %}
+    <div class="card-list">
+        <div class="img-list">
+            <img width="300px" src="{{ asset('uploads/pics/' ~ list.imageName) }}" />
+        </div>
+        <p>
+            {{ list.id }} - <span>{{ list.name }}</span>
+        </p>
+        <div class="btns">
+            <a class="btn btn-primary" href="{{ path('app_lists_show', { id: list.id }) }}">show</a>
+            <a class="btn btn-success" href="{{ path('app_lists_edit', { id: list.id }) }}">edit</a>
+        </div>
+    </div>
+    {% else %}
+    <p colspan="3">no records found</p>
+
+    {% endfor %}
+
+</div>
+
+<a class="btn btn-secondary w-25" href="{{ path('app_lists_new') }}">Create new</a>
+
 {% endblock %}
