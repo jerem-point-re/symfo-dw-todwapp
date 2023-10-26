@@ -100,7 +100,7 @@ class ListsController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_lists_delete', methods: ['POST'])]
+    #[Route('/{id}/delete', name: 'app_lists_delete', methods: ['POST'])]
     public function delete(Request $request, Lists $list, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete' . $list->getId(), $request->request->get('_token'))) {
