@@ -7,23 +7,21 @@ Lists index
 {% block body %}
 <h1>Lists index</h1>
 
-<div class="card-lists mb-3 df">
+<div class="row">
 
     {% for list in lists %}
-    <div class="card-list">
-        <div class="img-list">
-            <img width="300px" src="{{ asset('uploads/pics/' ~ list.imageName) }}" />
-        </div>
+    <div class="col-4">
+        <img width="300px" src="{{ asset('uploads/pics/' ~ list.imageName) }}" />
         <p>
             <span>{{ list.name }}</span>
         </p>
         <div class="btns">
-            <a class="btn btn-primary" href="{{ path('app_lists_show', { id: list.id }) }}">show</a>
-            <a class="btn btn-success" href="{{ path('app_lists_edit', { id: list.id }) }}">edit</a>
+            <a class="btn btn-primary" href="{{ path('app_lists_show', { id: list.id }) }}">Show</a>
+            <a class="btn btn-success" href="{{ path('app_lists_edit', { id: list.id }) }}">Edit</a>
         </div>
     </div>
     {% else %}
-    <p colspan="3">no records found</p>
+    <p>No records found</p>
 
     {% endfor %}
 
