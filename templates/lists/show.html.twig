@@ -10,7 +10,7 @@ Lists
 <div class="card-lists">
     <div class="card-list">
         <p>
-            {{ list.id }} - <span>{{ list.name }}</span>
+            <span>{{ list.name }}</span>
         </p>
         <div class="img-list">
             <img width="300px" src="{{ asset('uploads/pics/' ~ list.imageName) }}" />
@@ -22,7 +22,7 @@ Lists
                 <div class="col-6 col-sm-4">
                     {% for task in list.tasks %}
                     <div class="btn">
-                        <p>{{ task.name }}</p>
+                        <p>{{ task.content }}</p>
 
                         <a class="btn btn-success" href="{{ path('app_tasks_edit', { id: task.id }) }}">edit</a>
                         {{ include('tasks/_delete_form.html.twig') }}

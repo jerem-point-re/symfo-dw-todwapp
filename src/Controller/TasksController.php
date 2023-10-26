@@ -20,9 +20,11 @@ class TasksController extends AbstractController
     #[Route('/', name: 'app_tasks_index', methods: ['GET'])]
     public function index(TasksRepository $tasksRepository): Response
     {
-        return $this->render('tasks/index.html.twig', [
-            'tasks' => $tasksRepository->findAll(),
-        ]);
+
+        return $this->redirectToRoute('app_lists_index', [], Response::HTTP_SEE_OTHER);
+        // return $this->render('tasks/index.html.twig', [
+        //     'tasks' => $tasksRepository->findAll(),
+        // ]);
     }
 
     #[Route('/new', name: 'app_tasks_new', methods: ['GET', 'POST'])]

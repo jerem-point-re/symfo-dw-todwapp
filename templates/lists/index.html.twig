@@ -15,7 +15,7 @@ Lists index
             <img width="300px" src="{{ asset('uploads/pics/' ~ list.imageName) }}" />
         </div>
         <p>
-            {{ list.id }} - <span>{{ list.name }}</span>
+            <span>{{ list.name }}</span>
         </p>
         <div class="btns">
             <a class="btn btn-primary" href="{{ path('app_lists_show', { id: list.id }) }}">show</a>

@@ -13,6 +13,7 @@ class TasksType extends AbstractType
     {
         $builder
             ->add('content')
+            // ->add('list') -> DOES NOT WORK
         ;
     }
 
