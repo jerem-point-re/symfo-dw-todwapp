@@ -24,7 +24,7 @@ Lists
                     <div class="btn">
                         <p>{{ task.content }}</p>
 
-                        <a class="btn btn-success" href="{{ path('app_tasks_edit', { id: task.id }) }}">edit</a>
+                        {# <a class="btn btn-success" href="{{ path('app_tasks_edit', { id: task.id }) }}">edit</a> #}
                         {{ include('tasks/_delete_form.html.twig') }}
                     </div>
                     {% endfor %}
